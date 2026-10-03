@@ -12,3 +12,7 @@ parse:
 sphinx:
   config:
     html_baseurl: https://commons.thinkpress.org/
+    html_css_files:
+      - https://commons.thinkpress.org/static/thinkpress/auth.css
+    html_js_files:
+      - https://commons.thinkpress.org/static/thinkpress/auth.js

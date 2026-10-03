@@ -1,10 +1,10 @@
 # ThinkPress Commons
 
-**Setup guides shared by ThinkPress books.**
+**Shared setup guides for ThinkPress instructors, TAs, and authors.**
 
-These pages cover the tools several ThinkPress books rely on: installing Python, working in virtual environments, using Jupyter notebooks, keeping work in Git, and reaching AI models safely. Each book includes the guides it needs as appendices, with its own folder names and notes. This site is for instructors, TAs, and ThinkPress authors; students find these guides inside their own books.
+ThinkPress Commons holds the setup guides that several ThinkPress books share: installing Python, working in virtual environments, using Jupyter notebooks, keeping work in Git, and reaching AI models safely. Each book includes the guides it needs as appendices, so students find them inside their own book.
 
-Commands use `mycourse` as the example project folder; use your course's folder name instead.
+This site is for instructors, TAs, and ThinkPress authors. Sign in from the account menu in the upper-right corner to read the guides. Students: open your book from [learn.thinkpress.org](https://learn.thinkpress.org/), where these guides appear as appendices.
 
 <h2>Python and Jupyter</h2>
 
@@ -16,3 +16,5 @@ Commands use `mycourse` as the example project folder; use your course's folder 
 
 - {doc}`Git Basics <pages/git-basics>`
 - {doc}`Model Access and API Keys <pages/model-access>`
+
+Commands in the guides use `mycourse` as the example project folder; each book uses its own folder name.
