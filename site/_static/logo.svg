@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="title">
+  <title id="title">ThinkPress Commons</title>
+  <rect x="18" y="24" width="56" height="48" rx="10" fill="#07131f"/>
+  <text x="46" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#37a1f2">TP</text>
+  <text x="88" y="46" font-family="Georgia, serif" font-size="20" fill="#5b6773">ThinkPress</text>
+  <text x="88" y="72" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#07131f">Commons</text>
+</svg>

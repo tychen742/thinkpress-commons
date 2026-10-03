@@ -1,0 +1,9 @@
+/* Match the ThinkPress books: no empty top navbar band, unadorned links. */
+#pst-header { display: none !important; }
+a, a:hover, a:focus { text-decoration: none; }
+
+/* Guides and their sidebar links are for staff; commons.js adds tp-staff
+   after Press confirms a staff role. Everyone else sees the sign-in note. */
+html:not(.tp-staff) nav.bd-links,
+html:not(.tp-staff) .tp-staff-only { display: none !important; }
+html.tp-staff .tp-visitor-only { display: none !important; }
