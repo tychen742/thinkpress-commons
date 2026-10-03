@@ -2,7 +2,7 @@
 
 **Setup guides shared by ThinkPress books.**
 
-These pages cover the tools several ThinkPress books rely on: installing Python, working in virtual environments, using Jupyter notebooks, keeping work in Git, and reaching AI models safely. Each book includes the guides it needs as appendices, with its own folder names and notes. This site is the shared reference for instructors and lab staff, and for students who want the guides in one place.
+These pages cover the tools several ThinkPress books rely on: installing Python, working in virtual environments, using Jupyter notebooks, keeping work in Git, and reaching AI models safely. Each book includes the guides it needs as appendices, with its own folder names and notes. This site is the shared source for ThinkPress authors and admins; students read the guides inside their books.
 
 Commands use `mycourse` as the example project folder; use your course's folder name instead.
 
