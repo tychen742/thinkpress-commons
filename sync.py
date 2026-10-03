@@ -107,18 +107,21 @@ def sync_book(book: Path, check: bool) -> int:
         links = {p: os.path.splitext(os.path.relpath(o, out.parent))[0].replace(os.sep, "/") for p, o in outputs.items()}
         text, figures = render(entry["page"], variables, prefix, entry.get("intro"), links)
         current = out.read_text() if out.exists() else None
-        if current == text:
+        old_figures = [n for n in sorted(figures)
+                       if not (fig_dir / n).exists() or (fig_dir / n).read_bytes() != (FIGURES / n).read_bytes()]
+        if current == text and not old_figures:
             continue
         stale += 1
         if check:
-            print(f"out of date: {out.relative_to(book)}")
+            print(f"out of date: {out.relative_to(book)}" + (f" (figures: {', '.join(old_figures)})" if old_figures else ""))
             continue
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(text)
-        for name in figures:
+        if current != text:
+            out.write_text(text)
+        for name in old_figures:
             fig_dir.mkdir(parents=True, exist_ok=True)
             shutil.copy2(FIGURES / name, fig_dir / name)
-        print(f"synced: {entry['page']} -> {out.relative_to(book)}")
+        print(f"synced: {entry['page']} -> {out.relative_to(book)}" + (f" (figures: {', '.join(old_figures)})" if old_figures else ""))
     if not stale:
         print("all commons pages up to date")
     return 1 if (check and stale) else 0
