@@ -41,7 +41,7 @@ Set up the environment once with `python3.13 -m venv .venv && .venv/bin/pip inst
 
 ## Site Deployment
 
-Pushing to `main` builds the site in GitHub Actions. Deployment runs once the GitHub environment `commons` has the `DEPLOY_KEY` secret and the `DEPLOY_HOST` and `DEPLOY_USER` variables and `DEPLOY_PATH=/srv/thinkpress/books/commons` (Press production layout). The site requires sign-in: Press serves it at commons.thinkpress.org with `"access": "login"` (`press/books/settings.py`, `press/deploy/apache/commons.thinkpress.org*.conf`). Students also read the guides as synced copies inside their books.
+Pushing to `main` builds the site in GitHub Actions. Deployment runs once the GitHub environment `commons` has the `DEPLOY_KEY` secret and the `DEPLOY_HOST` and `DEPLOY_USER` variables and `DEPLOY_PATH=/srv/thinkpress/books/commons` (Press production layout). The site is for staff, not students or the public: Press serves it at commons.thinkpress.org with `"access": "staff"` (TAs, instructors, editors, authors, admins) (`press/books/settings.py`, `press/deploy/apache/commons.thinkpress.org*.conf`). Students read the guides as synced copies inside their books.
 
 ## Status
 

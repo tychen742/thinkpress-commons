@@ -40,7 +40,6 @@ FIGURES = ROOT / "figures"
 MARKER = "<!-- Synced from thinkpress-commons/pages/{page}.md. Do not edit here: edit the commons page and run sync.py. -->"
 PLACEHOLDER = re.compile(r"\{\{\s*([a-z_]+)\s*\}\}")
 FIGURE_REF = re.compile(r"(?<![\w/.-])figures/([\w.-]+\.(?:png|jpg|jpeg|gif|svg))")
-SITE_URL = "https://commons.thinkpress.org/pages/"
 DOC_REF = re.compile(r"\{doc\}`(?:([^`<]*?)\s*<)?([a-z0-9-]+)>?`")
 SITE_VARS = {"book_title": "your ThinkPress book", "book_folder": "mycourse", "python_version": "3.13"}
 
@@ -57,8 +56,8 @@ def render(page: str, variables: dict, figure_prefix: str, intro: str | None = N
     """Return the page text with placeholders filled, figure and page links rewritten, and the marker added.
 
     `links` maps commons page names to doc paths in the target (relative to this page).
-    Links to commons pages the target does not include point to the commons site,
-    which any signed-in reader can open.
+    Links to commons pages the target does not include become plain text: the commons
+    site is for staff (not students or the public), so readers cannot follow them.
     """
     src = (PAGES / f"{page}.md").read_text()
 
@@ -74,7 +73,8 @@ def render(page: str, variables: dict, figure_prefix: str, intro: str | None = N
                 return m.group(0)
             if target in links:
                 return f"{{doc}}`{label} <{links[target]}>`" if label else f"{{doc}}`{links[target]}`"
-            return f"[{label or page_title(target)}]({SITE_URL}{target}.html)"
+            # Students cannot open the commons site, so readers get the title as plain text.
+            return f"*{label or page_title(target)}*"
         text = DOC_REF.sub(relink, text)
 
     figures = set(FIGURE_REF.findall(text))
