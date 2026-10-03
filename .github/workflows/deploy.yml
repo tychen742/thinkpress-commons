@@ -53,4 +53,4 @@ jobs:
           rsync -az --delete --no-perms --no-owner --no-group --omit-dir-times \
             -e "ssh -i ~/.ssh/deploy_key" \
             site/_build/html/ \
-            "${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}:${{ vars.DEPLOY_PATH || '/var/www/commons' }}/"
+            "${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}:${{ vars.DEPLOY_PATH || '/srv/thinkpress/books/commons' }}/"

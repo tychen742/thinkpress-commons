@@ -41,7 +41,7 @@ Set up the environment once with `python3.13 -m venv .venv && .venv/bin/pip inst
 
 ## Site Deployment
 
-Pushing to `main` builds the site in GitHub Actions. Deployment runs once the GitHub environment `commons` has the `DEPLOY_KEY` secret and the `DEPLOY_HOST` and `DEPLOY_USER` variables (optional `DEPLOY_PATH`, default `/var/www/commons`). The site is fully public, so serve it as a plain static site (for example commons.thinkpress.org), not through the Press book gating.
+Pushing to `main` builds the site in GitHub Actions. Deployment runs once the GitHub environment `commons` has the `DEPLOY_KEY` secret and the `DEPLOY_HOST` and `DEPLOY_USER` variables and `DEPLOY_PATH=/srv/thinkpress/books/commons` (Press production layout). The site is fully public, so Apache serves it as static files at commons.thinkpress.org (`press/deploy/apache/commons.thinkpress.org*.conf`), not through Press gating.
 
 ## Status
 
