@@ -1,0 +1,12 @@
+format: jb-book
+root: home
+parts:
+  - caption: "Python and Jupyter"
+    chapters:
+      - file: pages/python-installation
+      - file: pages/virtual-environments
+      - file: pages/jupyter-notebook
+  - caption: "Working with Code and AI"
+    chapters:
+      - file: pages/git-basics
+      - file: pages/model-access

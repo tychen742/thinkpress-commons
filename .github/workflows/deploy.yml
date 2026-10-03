@@ -1,0 +1,56 @@
+name: Deploy ThinkPress Commons site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: commons-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy commons site
+    runs-on: ubuntu-latest
+    environment: commons
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Build site
+        run: |
+          python sync.py --site
+          jupyter-book build site --all
+          test -f site/_build/html/index.html
+
+      - name: Configure SSH
+        if: ${{ vars.DEPLOY_HOST != '' }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ vars.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy static build
+        if: ${{ vars.DEPLOY_HOST != '' }}
+        run: |
+          set -euo pipefail
+          rsync -az --delete --no-perms --no-owner --no-group --omit-dir-times \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            site/_build/html/ \
+            "${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}:${{ vars.DEPLOY_PATH || '/var/www/commons' }}/"

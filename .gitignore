@@ -1,0 +1,6 @@
+.venv/
+site/_build/
+site/pages/
+site/figures/
+__pycache__/
+.DS_Store
