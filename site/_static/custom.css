@@ -7,3 +7,10 @@ a, a:hover, a:focus { text-decoration: none; }
 html:not(.tp-staff) nav.bd-links,
 html:not(.tp-staff) .tp-staff-only { display: none !important; }
 html.tp-staff .tp-visitor-only { display: none !important; }
+
+/* Previous/Next size: label and page title both 0.85rem in every book, independent of the
+   book's body font size (Press docs/UI.md, Previous/Next size). */
+.prev-next-area a p.prev-next-subtitle,
+.prev-next-area a p.prev-next-title {
+    font-size: 0.85rem;
+}
