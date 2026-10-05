@@ -14,3 +14,8 @@ html.tp-staff .tp-visitor-only { display: none !important; }
 .prev-next-area a p.prev-next-title {
     font-size: 0.85rem;
 }
+
+/* Page title size: 1.87rem in every book, independent of body font size (Press docs/UI.md). */
+h1 {
+    font-size: 1.87rem !important;
+}
