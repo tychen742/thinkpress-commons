@@ -19,3 +19,13 @@ html.tp-staff .tp-visitor-only { display: none !important; }
 h1 {
     font-size: 1.87rem !important;
 }
+
+/* Body text size: 0.85rem in every book; paragraphs and list items inherit it (Press docs/UI.md). */
+body {
+    font-size: 0.85rem;
+}
+
+p,
+li {
+    font-size: inherit !important;
+}
