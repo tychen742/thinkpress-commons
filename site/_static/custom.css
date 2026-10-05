@@ -29,3 +29,16 @@ p,
 li {
     font-size: inherit !important;
 }
+
+/* Heading scale (Press docs/UI.md): H2 1.5rem, H3 1.1rem, H4 1.05rem; H1 is set above. */
+h2 {
+    font-size: 1.5rem !important;
+}
+
+h3 {
+    font-size: 1.1rem !important;
+}
+
+h4 {
+    font-size: 1.05rem !important;
+}
