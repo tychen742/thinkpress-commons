@@ -4,3 +4,7 @@ site/pages/
 site/figures/
 __pycache__/
 .DS_Store
+
+# Claude Code: per-machine permissions and temporary worktrees (shared launch.json and settings.json are committed)
+.claude/settings.local.json
+.claude/worktrees/
