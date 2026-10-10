@@ -40,7 +40,7 @@ FIGURES = ROOT / "figures"
 MARKER = "<!-- Synced from thinkpress-commons/pages/{page}.md. Do not edit here: edit the commons page and run sync.py. -->"
 PLACEHOLDER = re.compile(r"\{\{\s*([a-z_]+)\s*\}\}")
 FIGURE_REF = re.compile(r"(?<![\w/.-])figures/([\w.-]+\.(?:png|jpg|jpeg|gif|svg))")
-DOC_REF = re.compile(r"\{doc\}`(?:([^`<]*?)\s*<)?([a-z0-9-]+)>?`")
+DOC_REF = re.compile(r"\{doc\}`(?:([^`<]*?)\s*<)?([a-z0-9_-]+)>?`")
 SITE_VARS = {"book_title": "your ThinkPress book", "book_folder": "mycourse", "python_version": "3.13"}
 
 

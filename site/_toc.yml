@@ -1,6 +1,11 @@
 format: jb-book
 root: home
 parts:
+  - caption: "Development Fundamentals"
+    chapters:
+      - file: pages/command_line_basics
+      - file: pages/editing_tools
+      - file: pages/interactive_language_environments
   - caption: "Python and Jupyter"
     chapters:
       - file: pages/python-installation

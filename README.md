@@ -20,8 +20,8 @@ Shared reference pages for ThinkPress books: development tooling, environment se
 
 Commons holds only pages that are the same across books. Most appendices stay in their books (decided 2026-10-03):
 
-- **In commons (planned first pages):** Python installation, virtual environments, Jupyter Notebook, Git basics, model access and API keys.
-- **Stays in each book that needs it:** terminal, Linux, command-line, and editor tooling; language toolchains (C compiler, .NET); course logistics (VMs, servers); cheat sheets; capstones and final projects; any other book-specific appendix.
+- **In commons (planned first pages):** command-line fundamentals, editing tools, introductory REPL concepts, Python installation, virtual environments, Jupyter Notebook, Git basics, model access and API keys.
+- **Stays in each book that needs it:** language toolchains and language-specific setup (C compiler, .NET, language extensions and REPL commands); advanced Linux/shell administration; course logistics (VMs, servers); cheat sheets; capstones and final projects; any other book-specific appendix.
 
 Books letter all appendices A, B, C, … in `_toc.yml` order, mixing commons pages with their own. Commons pages never mention an appendix letter.
 
@@ -46,3 +46,10 @@ Pushing to `main` builds the site in GitHub Actions. Deployment runs once the Gi
 ## Status
 
 Created 2026-10-03. Page inventory across books in progress; the first pages will come from the best existing version of each duplicated appendix.
+
+## Shared Fundamentals (2026-10-10)
+
+Command-line, editor, and REPL fundamentals are canonical Commons references.
+Books retain guided setup, language-specific installation/launch commands, and
+their first-program lessons. CSCS Section 1.2 uses these references without
+moving its C# setup or Section 1.3 console application out of the chapter.
